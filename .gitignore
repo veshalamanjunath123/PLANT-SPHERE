@@ -17,9 +17,9 @@ target/
 out/
 
 # Environment and credentials
-application.properties
 *.env
 .env
+# application.properties is now safe (uses env vars only)
 
 # OS
 .DS_Store
