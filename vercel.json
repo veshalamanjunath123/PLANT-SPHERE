@@ -1,0 +1,12 @@
+{
+  "buildCommand": "cd plantsphere-frontend && npm install && npm run build",
+  "outputDirectory": "plantsphere-frontend/dist",
+  "installCommand": "cd plantsphere-frontend && npm install",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
