@@ -13,14 +13,6 @@ services:
         fromDatabase:
           name: plantsphere-db
           property: connectionString
-      - key: SPRING_DATASOURCE_USERNAME
-        fromDatabase:
-          name: plantsphere-db
-          property: user
-      - key: SPRING_DATASOURCE_PASSWORD
-        fromDatabase:
-          name: plantsphere-db
-          property: password
       - key: SPRING_JPA_HIBERNATE_DDL_AUTO
         value: update
       - key: SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT
