@@ -1,0 +1,23 @@
+﻿# Compiled class files
+target/
+*.class
+
+# Log files
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# Environment files and credentials
+application.properties
+*.env
+
+# Operating System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,16 @@
+﻿# Server Configuration
+server.port=8080
+
+# Database Configuration (MySQL 8) - Replace with your local MySQL credentials
+spring.datasource.url=jdbc:mysql://localhost:3306/plant_sphere?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+spring.datasource.username=YOUR_MYSQL_USERNAME
+spring.datasource.password=YOUR_MYSQL_PASSWORD
+
+# JPA / Hibernate Configuration
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+
+# Logging
+logging.level.com.manjunath.plantsphere=DEBUG
