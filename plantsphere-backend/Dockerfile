@@ -10,4 +10,5 @@ FROM eclipse-temurin:21-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-CMD ["java", "-jar", "app.jar"]
+# Convert postgresql:// to jdbc:postgresql:// for Spring Boot
+CMD sh -c 'if [ "$JDBC_DATABASE_URL" != "" ]; then export SPRING_DATASOURCE_URL=$(echo $JDBC_DATABASE_URL | sed "s/postgresql:/jdbc:postgresql:/"); fi && java -jar app.jar'
