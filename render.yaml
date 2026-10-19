@@ -5,6 +5,7 @@ services:
     dockerfilePath: ./plantsphere-backend/Dockerfile
     dockerContext: ./plantsphere-backend
     plan: free
+    healthCheckPath: /actuator/health
     envVars:
       - key: PORT
         value: 8080
