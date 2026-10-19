@@ -9,6 +9,7 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
+COPY docker-entrypoint.sh .
+RUN chmod +x docker-entrypoint.sh
 EXPOSE 8080
-# Convert postgresql:// to jdbc:postgresql:// for Spring Boot
-CMD sh -c 'if [ "$JDBC_DATABASE_URL" != "" ]; then export SPRING_DATASOURCE_URL=$(echo $JDBC_DATABASE_URL | sed "s/postgresql:/jdbc:postgresql:/"); fi && java -jar app.jar'
+ENTRYPOINT ["./docker-entrypoint.sh"]
