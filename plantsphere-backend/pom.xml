@@ -70,6 +70,13 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- PostgreSQL Connector (for cloud deployment) -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
 		<!-- Test -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

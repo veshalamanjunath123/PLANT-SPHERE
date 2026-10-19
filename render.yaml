@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: plantsphere-backend
+    env: docker
+    dockerfilePath: ./plantsphere-backend/Dockerfile
+    dockerContext: ./plantsphere-backend
+    plan: free
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: plantsphere-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: plantsphere-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: plantsphere-db
+          property: password
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT
+        value: org.hibernate.dialect.PostgreSQLDialect
+
+databases:
+  - name: plantsphere-db
+    databaseName: plantsphere
+    user: plantsphere_user
+    plan: free
