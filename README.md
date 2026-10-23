@@ -19,9 +19,7 @@ A full-stack e-commerce platform for plants with a React frontend and Spring Boo
 
 - Java 17+
 - Spring Boot
-- Spring Security
 - JPA/Hibernate
-- JWT Authentication
 
 ## Local Development
 
