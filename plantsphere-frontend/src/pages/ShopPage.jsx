@@ -234,9 +234,10 @@ export default function ShopPage() {
       if (locationParam.length)   content = content.filter((p) => locationParam.some((l) => p.suitableLocation?.includes(l)));
       if (inStockParam)           content = content.filter((p) => p.stockQuantity > 0);
 
+      const hasSecondaryFilters = sunlightParam.length > 0 || wateringParam.length > 0 || difficultyParam.length > 0 || locationParam.length > 0 || inStockParam;
       setProducts(content);
-      setTotalPages(res.data.totalPages || 0);
-      setTotalElements(res.data.totalElements || 0);
+      setTotalPages(hasSecondaryFilters ? Math.ceil(content.length / 12) : (res.data.totalPages || 0));
+      setTotalElements(hasSecondaryFilters ? content.length : (res.data.totalElements || 0));
     } catch (err) {
       console.error(err);
       setError('Unable to fetch plants. Is the backend running?');
